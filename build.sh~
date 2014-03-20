@@ -1,7 +1,6 @@
 #!/bin/bash
 
 # Version 2.0.4, Adapted for AOSPA.
-# Version 1.0.0, Based on 2.0.4 AOSPA's script.
 
 # We don't allow scrollback buffer
 echo -e '\0033\0143'
@@ -64,7 +63,7 @@ fi
 # Get start time
 res1=$(date +%s.%N)
 
-echo -e "${cya}Building ${bldcya}ASKP $VERSION for $DEVICE ${txtrst}";
+echo -e "${cya}Building ${bldcya}AOSPA $VERSION for $DEVICE ${txtrst}";
 echo -e "${bldgrn}Start time: $(date) ${txtrst}"
 
 # Decide what command to execute
@@ -102,7 +101,7 @@ if [ -n "${INTERACTIVE}" ]; then
         echo -e "${bldblu}Dropping to interactive shell${txtrst}"
         echo -en "${bldblu}Remeber to lunch you device:"
         if [ "${VENDOR}" == "pa" ]; then
-                echo -e "[${bldgrn}lunch askp_$DEVICE-userdebug${bldblu}]${txtrst}"
+                echo -e "[${bldgrn}lunch pa_$DEVICE-userdebug${bldblu}]${txtrst}"
         else
                 echo -e "[${bldgrn}lunch full_$DEVICE-userdebug${bldblu}]${txtrst}"
         fi
@@ -117,7 +116,7 @@ else
         # lunch/brunch device
         echo -e "${bldblu}Lunching device [$DEVICE] ${cya}(Includes dependencies sync)${txtrst}"
         export PREFS_FROM_SOURCE
-        lunch "askp_$DEVICE-userdebug";
+        lunch "pa_$DEVICE-userdebug";
 
         echo -e "${bldblu}Starting compilation${txtrst}"
         mka bacon
