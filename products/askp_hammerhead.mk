@@ -15,7 +15,7 @@
 
 # Check for target product
 
-ifeq (askp_mako,$(TARGET_PRODUCT))
+ifeq (askp_hammerhead,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
 OVERLAY_TARGET := askp_xhdpi
@@ -27,13 +27,13 @@ PREFS_FROM_SOURCE ?= true
 include vendor/askp/main.mk
 
 # Inherit AOSP device configuration
-$(call inherit-product, device/lge/mako/full_mako.mk)
+$(call inherit-product, device/lge/hammerhead/full_hammerhead.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := askp_mako
+PRODUCT_NAME := askp_hammerhead
 PRODUCT_BRAND := Google
-PRODUCT_MODEL := Nexus 4
+PRODUCT_MODEL := Nexus 5
 PRODUCT_MANUFACTURER := LGE
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=occam BUILD_FINGERPRINT=google/occam/mako:4.4.2/KOT49H/937116:user/release-keys PRIVATE_BUILD_DESC="occam-user 4.4.2 KOT49H 937116 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=hammerhead BUILD_FINGERPRINT="google/hammerhead/hammerhead:4.4.2/KOT49H/937116:user/release-keys" PRIVATE_BUILD_DESC="hammerhead-user 4.4.2 KOT49H 937116 release-keys"
 
 endif

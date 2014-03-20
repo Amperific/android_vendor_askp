@@ -1,4 +1,5 @@
 # Copyright (C) 2013 ParanoidAndroid Project
+# 2014 Modified by Nicholas Chen for ASKP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -17,19 +18,19 @@
 ifeq (pa_toro,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := askp_xhdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= true
 
 # Include ParanoidAndroid common configuration
-include vendor/pa/main.mk
+include vendor/askp/main.mk
 
 # Inherit AOSP device configuration
 $(call inherit-product, device/samsung/toro/full_toro.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_toro
+PRODUCT_NAME := askp_toro
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := Samsung

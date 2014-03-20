@@ -1,4 +1,5 @@
 # Copyright (C) 2013 ParanoidAndroid Project
+# 2014 Modified by Nicholas Chen for ASKP
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -14,10 +15,10 @@
 
 # Check for target product
 
-ifeq (pa_maguro,$(TARGET_PRODUCT))
+ifeq (askp_maguro,$(TARGET_PRODUCT))
 
 # OVERLAY_TARGET adds overlay asset source
-OVERLAY_TARGET := pa_xhdpi
+OVERLAY_TARGET := askp_xhdpi
 
 # Build paprefs from sources
 PREFS_FROM_SOURCE ?= true
@@ -29,7 +30,7 @@ include vendor/pa/main.mk
 $(call inherit-product, device/samsung/maguro/full_maguro.mk)
 
 # Override AOSP build properties
-PRODUCT_NAME := pa_maguro
+PRODUCT_NAME := askp_maguro
 PRODUCT_BRAND := Google
 PRODUCT_MODEL := Galaxy Nexus
 PRODUCT_MANUFACTURER := Samsung
